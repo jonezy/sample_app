@@ -14,7 +14,7 @@ require 'spec_helper'
 describe User do
   before do
     @user  = User.new(name: "Example User", email: "user@example.com",
-                     password: "foobar", password_confirmation: "foobar")
+                      password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @user }
@@ -94,8 +94,8 @@ describe User do
   end
 
   describe "when password confirmation is nil" do
-      before { @user.password_confirmation = nil }
-      it { should_not be_valid }
+    before { @user.password_confirmation = nil }
+    it { should_not be_valid }
   end
 
   describe "return value of authenticate method" do
@@ -123,4 +123,7 @@ describe User do
       @user.reload.email.should == mixed_case_email.downcase
     end
   end
+
+  #subject { page }
+
 end
